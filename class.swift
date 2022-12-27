@@ -39,3 +39,28 @@ Nadia.work()
 Nadia.printSummary()
 Nad.work()
 Nad.printSummary()
+
+///if a child class has any custom initializers, it must always call the parent’s initializer after it has finished setting up its own properties, if it has any.
+
+
+class Vehicle{
+    let isElectric : Bool
+    
+    init(isElectric: Bool){
+        self.isElectric = isElectric
+    }
+}
+
+class car : Vehicle{
+    let isConvertible : Bool
+    
+    init( isElectric: Bool,isConvertible : Bool){
+        self.isConvertible = isConvertible
+        ///super is another one of those values that Swift automatically provides for us, similar to self: it allows us to call up to methods that belong to our parent class, such as its initializer. You can use it with other methods if you want; it’s not limited to initialize
+        super.init(isElectric: isElectric)
+    }
+}
+
+
+let teslaX = car(isElectric: true, isConvertible: false)
+
