@@ -17,5 +17,3 @@ printSquare(of: 8)
 
 ///You can use guard with any condition, including ones that don’t unwrap optionals. For example, you might use
 ///guard someArray.isEmpty else { return }
-
-
